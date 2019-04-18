@@ -1,0 +1,21 @@
+adc_x是从ADC或DAC端口获得的值
+
+电压：Voltage=(float)adc_x*(3.3/4096)  //3.3是额定工作电压
+
+温度计算：T=(1.43-Voltage)/0.0043+25    (不同的传感器可能不同)
+
+
+百分比
+pro=DMA_GetCurrDataCounter(DMA1_Channel4);//当前还剩余数据量
+pro=1-pro/((TEXT_LENTH+2)*100);//得到百分比 
+pro*=100; //扩大 100 倍
+
+显示：pro%
+
+
+
+
+
+
+
+
